@@ -1,202 +1,204 @@
-**1. Supervised Learning cheatsheet**
+**1. Aprendizagem Supervisionada**
 
 &#10230;
 
 <br>
 
-**2. Introduction to Supervised Learning**
+**2. Introdução a aprendizagem Supervisionada**
 
 &#10230;
 
 <br>
 
-**3. Given a set of data points {x(1),...,x(m)} associated to a set of outcomes {y(1),...,y(m)}, we want to build a classifier that learns how to predict y from x.**
+**3. Tendo um conjunto de pontos {x(1),...,x(m)} e as respectivas observações (ou classificações) associadas {y(1),...,y(m)}, nós queremos construir um modelo que aprenda a prever {y} tendo em conta {x}**
 
 &#10230;
 
 <br>
 
-**4. Type of prediction ― The different types of predictive models are summed up in the table below:**
+**4. Tipos de predição ― Os diferentes tipos de modelos preditivos estão sumarisados na tabela em baixo:**
 
 &#10230;
 
 <br>
 
-**5. [Regression, Classifier, Outcome, Examples]**
+**5. [Regressão, Classificação, Resultado, Exemplos]**
 
 &#10230;
 
 <br>
 
-**6. [Continuous, Class, Linear regression, Logistic regression, SVM, Naive Bayes]**
+**6. [Contínuo, Classe, Regressão linear, Regressão logística, SVM, Naive Bayes]**
 
 &#10230;
 
 <br>
 
-**7. Type of model ― The different models are summed up in the table below:**
+**7. Tipos de modelo ― Os diferentes tipos de modelo estaão sumarisadas na tabela em baixo:**
 
 &#10230;
 
 <br>
 
-**8. [Discriminative model, Generative model, Goal, What's learned, Illustration, Examples]**
+**8. [Modelo discriminativo, Modelo generativo, Objectivo, O que o modelo aprende, Ilustração, Exemplos]**
 
 &#10230;
 
 <br>
 
-**9. [Directly estimate P(y|x), Estimate P(x|y) to then deduce P(y|x), Decision boundary,  	Probability distributions of the data, Regressions, SVMs, GDA, Naive Bayes]**
+**9. [Estimar P(y|x) directamente, Estimar P(x|y) para depois deduzir P(y|x), Linha de decisão, Distribuições probabilísticas da data, Regressões, SVMs, GDA, Naive Bayes]**
 
 &#10230;
 
 <br>
 
-**10. Notations and general concepts**
+**10. Notações e conceitos gerais**
 
 &#10230;
 
 <br>
 
-**11. Hypothesis ― The hypothesis is noted hθ and is the model that we choose. For a given input data x(i) the model prediction output is hθ(x(i)).**
+**11. Hipótese ― A hipótese é denotada hθ e é o modelo que nós escolhemos para resolver o problema. Para um ponto x(i) a predição do modelo é denotada hθ(x(i)).**
 
 &#10230;
 
 <br>
 
-**12. Loss function ― A loss function is a function L:(z,y)∈R×Y⟼L(z,y)∈R that takes as inputs the predicted value z corresponding to the real data value y and outputs how different they are. The common loss functions are summed up in the table below:**
+**12. Função perda ― Uma Função perda é um função L:(z,y)∈R×Y⟼L(z,y)∈R que calcula quão diferentes a predição do modelo, {z}, e o verdadeiro valor, {y}, são. As funções de perda mais comuns estão sumarisadas na tabela em baixo:**
 
 &#10230;
 
 <br>
 
-**13. [Least squared error, Logistic loss, Hinge loss, Cross-entropy]**
+**13. [Erro dos quadrados mínimos, Perca logística, Perca dobradiça?, Entropia Cruzada]**
 
 &#10230;
 
 <br>
 
-**14. [Linear regression, Logistic regression, SVM, Neural Network]**
+**14. [Regressão linear, Regressão logística, SVM, Redes neuronais]**
 
 &#10230;
 
 <br>
 
-**15. Cost function ― The cost function J is commonly used to assess the performance of a model, and is defined with the loss function L as follows:**
+**15. Função de custo ― A função de custo J é geralmente usada para avaliar o desempenho do modelo, e é definida usando a função de perca L da seguinte maneira:**
 
 &#10230;
 
 <br>
 
-**16. Gradient descent ― By noting α∈R the learning rate, the update rule for gradient descent is expressed with the learning rate and the cost function J as follows:**
+**16. Método do gradiente ― Denotamos α∈R a velocidade de aprendizagem, o método do gradiente é actualizado a cada passo usando a função de perca J da seguinte maneira:**
 
 &#10230;
 
 <br>
 
-**17. Remark: Stochastic gradient descent (SGD) is updating the parameter based on each training example, and batch gradient descent is on a batch of training examples.**
+**17. Observação: Método do gradiente estocástico (SGD) faz o passo de aprendizagem para cada dado de treino individual, e o método do gradiente estocástico com mini-lote executa o passo de aprendizagem num conjunto de dados.**
 
 &#10230;
 
 <br>
 
-**18. Likelihood ― The likelihood of a model L(θ) given parameters θ is used to find the optimal parameters θ through maximizing the likelihood. In practice, we use the log-likelihood ℓ(θ)=log(L(θ)) which is easier to optimize. We have:**
+**18. Verossimilhança ― A verossimilhança de um modelo L(θ) tendo em conta parâmetros θ é usada para encontrar os parâmetros do modelo mais correctos θ através de maximizar a verossimilhança. Na prática nós usamos o logaritmo da verossimilhança ℓ(θ)=log(L(θ)) visto que é mais fácil de optimisar:**
 
 &#10230;
 
 <br>
 
-**19. Newton's algorithm ― The Newton's algorithm is a numerical method that finds θ such that ℓ′(θ)=0. Its update rule is as follows:**
+**19. Algoritmo de Newton ― O algoritmo de Newton é um método numérico que encontra θ de maneira que ℓ′(θ)=0. A regra para actualizar os parâmetros é:**
 
 &#10230;
 
 <br>
 
-**20. Remark: the multidimensional generalization, also known as the Newton-Raphson method, has the following update rule:**
+**20. Observação: a generalização para múltiplas dimensões, chamado Newton-Raphson method, actualiza os parâmetros da seguinte maneira:**
 
 &#10230;
 
 <br>
 
-**21. Linear models**
+**21. Modelos lineares**
 
 &#10230;
 
 <br>
 
-**22. Linear regression**
+**22. Regressão linear**
 
 &#10230;
 
 <br>
 
-**23. We assume here that y|x;θ∼N(μ,σ2)**
+**23. Assuma que y|x;θ∼N(μ,σ2)**
 
 &#10230;
 
 <br>
 
-**24. Normal equations ― By noting X the matrix design, the value of θ that minimizes the cost function is a closed-form solution such that:**
+**24. Sistema de equações ― Usemos X para representar a matriz com {m} linhas, em que cada linha contém um vetor {x_i}, o valor de θ que minimiza a função de custo, é dado pela equação seguinte:**
 
 &#10230;
 
 <br>
 
-**25. LMS algorithm ― By noting α the learning rate, the update rule of the Least Mean Squares (LMS) algorithm for a training set of m data points, which is also known as the Widrow-Hoff learning rule, is as follows:**
+**25. Algoritmo LMS ― Usemos α para representar a velocidade de aprendizagem, o algoritmo dos Quadrados Mínimos (LMS em inglês), também conhecido como regra de Widrow-Hoff, para dados de treino com {m} pontos, é dado pela seguinte equação:**
 
 &#10230;
 
 <br>
 
-**26. Remark: the update rule is a particular case of the gradient ascent.**
+**26. Note: Esta equação é uma variação do método de gradiente.**
 
 &#10230;
 
 <br>
 
-**27. LWR ― Locally Weighted Regression, also known as LWR, is a variant of linear regression that weights each training example in its cost function by w(i)(x), which is defined with parameter τ∈R as:**
+# TODO: dunno how to translate this properly
+**27. LWR ― Regressão ponderada localmente (LWR em inglês) é uma variação que pesa cada ponto do conjunto de treino in its cost function by w(i)(x), which is defined with parameter τ∈R as:**
 
 &#10230;
 
 <br>
 
-**28. Classification and logistic regression**
+**28. Classificação e regressão logística**
 
 &#10230;
 
 <br>
 
-**29. Sigmoid function ― The sigmoid function g, also known as the logistic function, is defined as follows:**
+**29. Função sigmóide ― A função sigmóide g, também conhecida como função logística, é definida da seguinte maneira:**
 
 &#10230;
 
 <br>
 
-**30. Logistic regression ― We assume here that y|x;θ∼Bernoulli(ϕ). We have the following form:**
+**30. Regressão logística ― Assumindo que y|x;θ∼Bernoulli(ϕ). Apresentamos o problema de regressão da seguinte maneira:**
 
 &#10230;
 
 <br>
 
-**31. Remark: there is no closed form solution for the case of logistic regressions.**
+**31. Note: Não existe solução fixa para regressão logística. A solução tem de ser sempre achada de maneira iterativa**
 
 &#10230;
 
 <br>
 
-**32. Softmax regression ― A softmax regression, also called a multiclass logistic regression, is used to generalize logistic regression when there are more than 2 outcome classes. By convention, we set θK=0, which makes the Bernoulli parameter ϕi of each class i equal to:**
+**32. Regressão Softmax ― A regressão softmax, também conhecida como regressão logística para multíplas classes, é usada para generalisar a regressão logística para casos com mais de 2 classes. Por convenção usamos θK=0, que faz com que o parâmetro de Bernoulli ϕi para cada classe {i} igual a:**
 
 &#10230;
 
 <br>
 
-**33. Generalized Linear Models**
+**33. Modelos lineares generalisados**
 
 &#10230;
 
 <br>
 
-**34. Exponential family ― A class of distributions is said to be in the exponential family if it can be written in terms of a natural parameter, also called the canonical parameter or link function, η, a sufficient statistic T(y) and a log-partition function a(η) as follows:**
+# TODO: dunno
+**34. Familía exponencial ― Uma distribuição é exponencial if it can be written in terms of a natural parameter, also called the canonical parameter or link function, η, a sufficient statistic T(y) and a log-partition function a(η) as follows:**
 
 &#10230;
 
@@ -208,37 +210,37 @@
 
 <br>
 
-**36. Here are the most common exponential distributions summed up in the following table:**
+**36. As distribuições exponenciais mais comuns estão sumarisadas na tabela seguinte:**
 
 &#10230;
 
 <br>
 
-**37. [Distribution, Bernoulli, Gaussian, Poisson, Geometric]**
+**37. [Distribuição, Bernoulli, Gaussiana, Poisson, Geométrica]**
 
 &#10230;
 
 <br>
 
-**38. Assumptions of GLMs ― Generalized Linear Models (GLM) aim at predicting a random variable y as a function fo x∈Rn+1 and rely on the following 3 assumptions:**
+**38. Suposições de modelos lineares generalisados ― Este tipo de modelos tem como objectivo prever a variável aleatória {y} como função de x∈Rn+1 e fazem as seguintes suposições:**
 
 &#10230;
 
 <br>
 
-**39. Remark: ordinary least squares and logistic regression are special cases of generalized linear models.**
+**39. Note: O algoritmo dos quadrados mínimos e regressão logística sao casos especiais de Modelos lineares generalisados.**
 
 &#10230;
 
 <br>
 
-**40. Support Vector Machines**
+**40. Máquina de vetores de suporte**
 
 &#10230;
 
 <br>
 
-**41: The goal of support vector machines is to find the line that maximizes the minimum distance to the line.**
+**41: O objectivo das máquinas de vetores de suporte (SVM em inglês) é encontrar a função que separa as classes de maneira que os exemplos de cada categoria sejam divididos por um espaço claro que seja tão amplo quanto possível.**
 
 &#10230;
 
